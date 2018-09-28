@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h5>Register Pane</h5>
+      <div class="text-dark bg-white">
+        <form #frm='ngForm' (ngSubmit)="addUser(frm)">
+          <div class="form-group">
+            <label for="name">Your Name: </label>
+            <input type="text" class="form-control" name="userName"
+            ngModel
+            required
+            #userName="ngModel"
+            pattern="[a-zA-Z][a-zA-Z]+">
+          </div>
+          <div *ngIf="userName?.touched">
+              <div *ngIf="userName.errors?.required" class="alert alert-danger">
+                Username cannot be empty !
+              </div>
+              <div *ngIf="userName.errors?.pattern" class="alert alert-danger">
+                <strong>Invalid Username! </strong>Should not contain space.
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID: </label>
+            <input type="text" class="form-control" name="userEmail"
+            ngModel
+            required
+            #userEmail="ngModel"
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+          </div>
+          <div *ngIf= "userEmail?.touched">
+            <div *ngIf= "userEmail.errors?.required" class="alert alert-danger">
+              Email cannot be empty !
+            </div>
+            <div *ngIf= "userEmail.errors?.pattern" class="alert alert-danger">
+              <strong>Invalid Email! </strong>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" class="form-control" name="userPass"
+            ngModel
+            required
+            minlength="8"
+            #userPass="ngModel"
+            >
+          </div>
+          <div *ngIf="userPass?.touched">
+            <div *ngIf="userPass.errors?.required" class="alert alert-danger">
+              Password cannot be empty !
+            </div>
+            <div *ngIf="userPass.errors?.minlength" class="alert alert-danger">
+              <strong>Invalid Password! </strong> Password should be of minimum 8 characters
+            </div>
+          </div>
+          <button type="submit" name="button" class="btn btn-success" [disabled]= "frm.invalid">
+            Add User
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="text-center">
+        <h5>List Pane</h5>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor= "let user of userList" (click)="selectUser(user)">
+          {{user?.userName}}
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-4">
+      <h5>Details Pane</h5>
+      <div class="card" *ngIf="isUserSelected">
+        <div class="card-header">
+            Person Details
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{selectedUser?.userName}}</h5>
+          <p class="card-text">Works at Persistent Systems Ltd.</p>
+          <p class="card-text">{{selectedUser?.userEmail}}</p>
+          <a href="#" class="btn btn-primary">Visit Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

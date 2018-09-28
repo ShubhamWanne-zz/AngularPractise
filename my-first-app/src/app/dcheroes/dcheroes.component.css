@@ -1,0 +1,20 @@
+button{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.batman{
+  background-color:#212121;
+  color: #ffffff;
+}
+.superman{
+  background-color:#B71C1C;
+  color: #ffffff;
+}
+.wonderwomen{
+  background-color:#3F51B5;
+  color: #ffffff;
+}
+.flash{
+  background-color:#00695C;
+  color: #ffffff;
+}

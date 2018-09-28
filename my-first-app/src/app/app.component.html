@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" class="container">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/2000px-AngularJS_logo.svg.png" width="600" height="150" alt="">
+  <h1>
+    <!-- Using Interpolation here !-->
+    {{ title }}!
+  </h1>
+  <h4>     The legend of prince Ram</h4>
+  <hr>
+</div>
+<div class="container">
+  <div class="row" >
+    <div class="col-md-4 text-left" style="">
+      <h3>{{sayHello()}}</h3>
+    </div>
+    <div class="col-md-8 text-right">
+      <button type="button" name="button" class="btn btn-primary " style="width: 200px" (click)="changeValue()"> {{helloButtonValue}}</button>
+    </div>
+  </div>
+  <!-- Using Interpolation {{}} here !-->
+  <!-- Using property binding !-->
+  <hr>
+
+  <!-- ************** To Learn Data Binding
+    <app-avengerscharacter [img]="imgURL"></app-avengerscharacter>
+  !-->
+  <!-- ************** To Learn Component and Directives
+    <app-dcheroes></app-dcheroes>
+  !-->
+  <!-- ************** To Learn Directives
+    <app-mydirective></app-mydirective>
+  !-->
+
+  <!-- To Learn template driven forms
+  <app-my-forms></app-my-forms>
+  !-->
+
+  <app-reactive-forms></app-reactive-forms>
+</div>

@@ -1,0 +1,17 @@
+<div class="" *ngFor="let hero of dcHeroes;" appAppBold bgColor="#B2DFDB">
+  <button type="button" style="margin-top: 10px" class="btn btn-outline-primary btn-sm" name="button" (click)= "selectHero(hero)" >
+    Expand
+    </button>
+  {{hero}}
+</div>
+<div class="container" style=" margin-top: 10px;" *ngIf="isHeroSelected()">
+  <div class="card" style="width: 15rem; text-align:left;" [ngClass]="selectedHeroStyle">
+    <img src={{selectedHeroImg}} height="200" width="100" class="card-img-top" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{selectedHero}}</h5>
+        <p class="card-text">Real Name: {{selectedHeroRealName}}</p>
+        <p class="card-text">Citizenship: {{selectedHeroPlace}} </p>
+        <a href="#" class="btn btn-light"> Visit profile</a>
+      </div>
+  </div>
+</div>

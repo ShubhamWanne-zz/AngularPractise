@@ -1,0 +1,19 @@
+<div style="text-align:center">
+  <h3> AVENGER'S Space</h3>
+  <div style="text-align: center">
+    <img [src]= "img" alt="" width="800" height="150">
+  </div>
+  <hr>
+  <div style="text-align:left">
+    <input type="text" name="text" [(ngModel)]="heroName" [value]="heroName" class="form-control" >
+    <h5> {{heroName}} </h5>
+    <ul class="list-group">
+      <li class="list-group-item">{{avengersName[0]}}</li>
+      <li class="list-group-item">{{avengersName[1]}}</li>
+      <li class="list-group-item">{{avengersName[2]}}</li>
+      <li class="list-group-item">{{avengersName[3]}}</li>
+    </ul>
+    <button type="button" name="button" class="btn btn-primary" (click)= "startChange()">Start</button>
+    <button type="button" name="button" [disabled]="startStopFlag" class="btn btn-danger" (click)= "stopChange()">Stop</button>
+  </div>
+</div>
