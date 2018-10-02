@@ -18,6 +18,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 
 
 import { AppBoldDirective } from './app-bold.directive';
+import { MarvelMoviesComponent } from './marvel-movies/marvel-movies.component';
 
 const ROUTES: Routes= [
   {path:'', component:HomeComponent},
@@ -36,7 +37,8 @@ const ROUTES: Routes= [
     BlogComponent,
     MydirectiveComponent,
     MyFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    MarvelMoviesComponent
   ],
   imports: [
     BrowserModule,

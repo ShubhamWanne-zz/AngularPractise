@@ -1,0 +1,19 @@
+<div class="container" style="margin-bottom: 10px">
+  <form #frm="ngForm" (ngSubmit)="addMovie(frm)">
+    <fieldset class="form-group">
+      <label for="movieName">Movie Name</label>
+      <input type="text" name ="movieName" class="form-control" ngModel>
+      <small class="text-muted">Marvel Movies name would be greatly appreciated.</small>
+    </fieldset>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<button type="button" name="button" class="btn btn-primary" (click)="getMovies()">{{movieListButtonName}}</button>
+<div class="container" *ngIf="isMoviesHidden" style="margin-top: 10px">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor=" let movie of movieList">
+      {{movie}}
+    </li>
+  </ul>
+</div>
